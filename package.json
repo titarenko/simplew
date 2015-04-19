@@ -1,0 +1,31 @@
+{
+  "name": "simplew",
+  "version": "0.1.0",
+  "description": "Simple web app framework for Node.js (based on express, dot, and promises)",
+  "main": "index.js",
+  "dependencies": {
+    "bluebird": "^2.9.24",
+    "lodash": "^3.6.0",
+    "express": "^4.12.3",
+    "express-dot": "^0.1.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/titarenko/simplew.git"
+  },
+  "keywords": [
+    "web",
+    "framework",
+    "simple",
+    "promise",
+    "express",
+    "bluebird",
+    "dot"
+  ],
+  "author": "Constantin Titarenko",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/titarenko/simplew/issues"
+  },
+  "homepage": "https://github.com/titarenko/simplew"
+}
