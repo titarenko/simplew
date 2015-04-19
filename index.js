@@ -19,17 +19,17 @@ function startSimplewSync (config) {
 	var app = express();
 
 	app.set('trust proxy', true);
-	app.set('views', config.views || fsutils.getDefaultPathSync('views'));
+	app.set('views', config.views || fsutils.getDefaultPathSync(config.basedir, 'views'));
 	app.engine('html', dot.__express);
 	app.set('view engine', 'html');
 
-	var controllers = fsutils.loadSync(config.controllers || fsutils.getDefaultPathSync('controllers'));
+	var controllers = fsutils.loadSync(config.controllers || fsutils.getDefaultPathSync(config.basedir, 'controllers'));
 	handlers.setupRouterSync(app, controllers, config.stderr || console.error);
 
 	if (config.assets) {
 		app.use(express.static(_.isString(config.assets)
 			? config.assets
-			: fsutils.getDefaultPathSync('assets')
+			: fsutils.getDefaultPathSync(config.basedir, 'assets')
 		));
 	}
 	

@@ -1,8 +1,12 @@
 var fs = require('fs');
 var path = require('path');
 
-function getDefaultPathSync (directory) {
-	return __dirname + '/../../' + directory;
+function getDefaultPathSync (basedir, directory) {
+	if (!directory) {
+		directory = basedir;
+		basedir = __dirname;
+	}
+	return basedir + '/../../' + directory;
 }
 
 function discoverSync (directory) {
