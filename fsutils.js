@@ -4,9 +4,9 @@ var path = require('path');
 function getDefaultPathSync (basedir, directory) {
 	if (!directory) {
 		directory = basedir;
-		basedir = __dirname;
+		basedir = __dirname + '/../../';
 	}
-	return basedir + '/../../' + directory;
+	return basedir + directory;
 }
 
 function discoverSync (directory) {
