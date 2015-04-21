@@ -19,7 +19,7 @@ function discoverSync (directory) {
 
 function loadSync (directory) {
 	return discoverSync(directory).map(function (file) {
-		var noext = file.slice(0, file.length - 3);
+		var noext = path.basename(file, '.js');
 		return {
 			name: _.camelCase(noext),
 			instance: require(file) 
