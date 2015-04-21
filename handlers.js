@@ -49,7 +49,7 @@ function handleExceptionSync (stderr, req, res, exception) {
 
 function getMethodWrapperSync (method, stderr) {
 	return function methodWrapper (req, res) {
-		var params = _.extend(req.files, req.query, req.params, req.body);
+		var params = _.extend({}, req.files, req.query, req.params, req.body);
 		Promise.resolve(method(params, req, res))
 			.then(_.partial(handleResultSync, req, res))
 			.catch(_.partial(handleExceptionSync, stderr, req, res));
