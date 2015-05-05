@@ -42,7 +42,7 @@ function handleResultSync (req, res, result) {
 }
 
 function handleExceptionSync (stderr, req, res, exception) {
-	stderr(exception);
+	stderr(exception && exception.stack || exception);
 	res.status(500);
 	res.render('500', { url: req.url });
 }
