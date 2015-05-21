@@ -29,6 +29,10 @@ function handleResultSync (req, res, result) {
 		case 'redirect':
 			res.redirect(result.url);
 			break;
+
+		case 'json':
+			res.json(result.pojo);
+			break;
 		
 		default:
 			if (result === null) {

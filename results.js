@@ -11,5 +11,11 @@ module.exports = {
 			type: 'redirect',
 			url: url
 		};
+	},
+	json: function (pojo) {
+		return {
+			type: 'json',
+			pojo: pojo
+		};
 	}
 };

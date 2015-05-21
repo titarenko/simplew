@@ -1,6 +1,6 @@
 {
   "name": "simplew",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "Simple web app framework for Node.js (based on express, dot, and promises)",
   "main": "index.js",
   "dependencies": {
