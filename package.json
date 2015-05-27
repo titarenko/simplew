@@ -1,13 +1,14 @@
 {
   "name": "simplew",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "Simple web app framework for Node.js (based on express, dot, and promises)",
   "main": "index.js",
   "dependencies": {
     "bluebird": "^2.9.24",
-    "lodash": "^3.6.0",
+    "body-parser": "^1.12.4",
     "express": "^4.12.3",
-    "express-dot": "^0.1.0"
+    "express-dot": "^0.1.0",
+    "lodash": "^3.6.0"
   },
   "repository": {
     "type": "git",

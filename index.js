@@ -15,6 +15,7 @@ function startSimplewSync (config) {
 
 	var express = require('express');
 	var dot = require('express-dot');
+	var bodyParser = require('body-parser');
 
 	var app = express();
 
@@ -22,6 +23,9 @@ function startSimplewSync (config) {
 	app.set('views', config.views || fsutils.getDefaultPathSync(config.basedir, 'views'));
 	app.engine('html', dot.__express);
 	app.set('view engine', 'html');
+
+	app.use(bodyParser.urlencoded({ extended: false }));
+	app.use(bodyParser.json());
 
 	var controllers = fsutils.loadSync(config.controllers || fsutils.getDefaultPathSync(config.basedir, 'controllers'));
 	handlers.setupRouterSync(app, controllers, config.stderr || console.error);
